@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% block title %} Browse Tools {% endblock %} {% block
+links %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/viewImageStyle.css') }}"
+/>
+
+{% endblock %} {% block js %}
+
+<!-- <script defer src="static/js/viewImageScript.js"></script> -->
+<script
+  src="https://unpkg.com/js-image-zoom@0.7.0/js-image-zoom.js"
+  type="application/javascript"
+></script>
+
+{% endblock %}{% block content %}
+<style></style>
+
+<!------------------single image display---------------->
+<div class="container">
+  <div class="row">
+    <!-- <div class="col-6"> -->
+    <div id="img-container1" class="image-container">
+      <img src="data:image/jpg;charset=utf-8;base64,{{image1}}" alt="image1" />
+    </div>
+    <!-- </div>
+    <div class="col-6"> -->
+    <div id="img-container2" class="image-container">
+      <img src="data:image/jpg;charset=utf-8;base64,{{image2}}" alt="image2" />
+    </div>
+    <!-- </div> -->
+  </div>
+</div>
+
+<script>
+  let options1 = {
+    width: 200,
+    height: 400,
+    zoomWidth: 2,
+    offset: { vertical: 1, horizontal: 45 },
+    scale: 1.2,
+  };
+  let options2 = {
+    width: 200,
+    height: 400,
+    zoomWidth: 2,
+    offset: { vertical: 1, horizontal: 15 },
+    zoomPosition: "original",
+    scale: 1.2,
+  };
+  window.addEventListener("load", function () {
+    new ImageZoom(document.getElementById("img-container1"), options1);
+    new ImageZoom(document.getElementById("img-container2"), options2);
+  });
+</script>
+
+{%endblock%}

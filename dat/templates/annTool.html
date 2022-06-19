@@ -1,0 +1,87 @@
+{% extends 'base.html'%} {% block links %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/boneAgeStyle.css') }}"
+/>
+{% endblock %} {% block js %}
+<script defer src="static/js/ann1Script.js"></script>
+{% endblock %} {% block title %} Annotation Tool {% endblock %} {% block content
+%}
+<div class="row m-0">
+  <div class="col-8">
+    <div class="container">
+      <div class="no-image" style="transform: translateY(50%)" id="no-image">
+        <span class="msg">No image selected.</span>
+      </div>
+      <div class="img-container">
+        <img id="thumbnail" src="" />
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <ul class="options">
+      <li class="item">
+        <a class="back-btn" href="{{url_for('tools_page')}}">&larr;Back</a>
+      </li>
+      <li class="item">
+        <a id="how-to" class="question__icon" href="#">
+          <!-- question mark symbol -->
+          <!-- <button class="question">?</button> -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="23"
+            height="25"
+            fill="#444"
+            class="bi bi-question-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+            />
+            <path
+              d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"
+            />
+          </svg>
+          Help
+        </a>
+      </li>
+    </ul>
+    <!-- <div class="back-btn-div"></div> -->
+    <div class="ann-btns">
+      <!-- <div class="container"> -->
+      <form
+        action="{{url_for('ann_tool2_page')}}"
+        enctype="multipart/form-data"
+        method="POST"
+      >
+        <div class="row m-0">
+          <label for="imageUpload" class="bn632-hover bn20">
+            Select Image
+          </label>
+          <input
+            class="ann_input"
+            type="file"
+            name="pic"
+            id="imageUpload"
+            onchange="showMyImage(this)"
+          />
+        </div>
+        <div class="row m-0">
+          <label for="annSubmit" class="bn632-hover bn26"> Annotate </label>
+          <input id="annSubmit" type="submit" value="Annotate" />
+        </div>
+        <br />
+      </form>
+      <a href="{{url_for('ann_img_list')}}"
+        ><button class="bn632-hover bn18">View Images</button></a
+      >
+      <!-- </div> -->
+    </div>
+
+    <div class="row">
+      <div class="container"></div>
+    </div>
+  </div>
+</div>
+
+{%endblock%} {% block internal_js %} {% endblock %}

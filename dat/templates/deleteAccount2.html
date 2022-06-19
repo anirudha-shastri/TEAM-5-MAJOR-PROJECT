@@ -1,0 +1,18 @@
+{% extends 'dashboard.html' %} {% block title %} Change Password {%endblock%} {%
+block account_info%}
+
+<div class="container">
+  <form method="POST" class="form-signin" autocomplete="off">
+    {{ form.hidden_tag() }}
+    <h1 class="h2 mb-3 font-weight-normal heading" style="text-align: left">
+      By clicking the button your account will be permanently deleted.
+    </h1>
+
+    <div class="submit-btn">
+      {{ form.submit(class="btn btn-lg btn-primary") }}
+    </div>
+  </form>
+</div>
+{%endblock%} {% block internal_js %}
+<script></script>
+{% endblock %}

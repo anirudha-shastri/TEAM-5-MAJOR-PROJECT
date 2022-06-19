@@ -1,0 +1,53 @@
+{% extends 'dashboard.html' %} {% block title %}Account Settings {% endblock
+%}{% block account_info%}
+<div class="container">
+  <div class="heading">
+    <h2><i class="far fa-address-card"></i> User Information</h2>
+  </div>
+
+  <div class="row row-info">
+    <div class="col-3 first-col">Username:</div>
+    <div class="col-6">{{user.username}}</div>
+    <div class="col-3 third-col">
+      <a class="acc-links" href="#"
+        ><i class="fa fa-edit"></i>change username</a
+      >
+    </div>
+  </div>
+  <div class="row row-info">
+    <div class="col-3 first-col">E-mail address:</div>
+    <div class="col-6">{{user.email_address}}</div>
+    <div class="col-3 third-col">
+      <a class="acc-links" href="#"
+        ><i class="fa fa-edit"></i>change e-mail address</a
+      >
+    </div>
+  </div>
+
+  <div class="row row-info">
+    <div class="col-3 first-col">Account verification status:</div>
+    <div class="col-6">
+      {% if user.is_verified == True %}
+      <span style="color: #4bb543">
+        <i class="fa fa-check" aria-hidden="true"></i>
+        Account verified</span
+      >
+      {% else %}
+      <span style="color: #f32013">
+        <i class="fa fa-times" aria-hidden="true"></i>&nbsp;Account not
+        verified</span
+      >
+      {% endif %}
+    </div>
+    <div class="col-3 third-col">
+      {% if user.is_verified == True %}
+      <span></span>
+      {% else %}
+      <a class="acc-links" href="{{url_for('verify_request')}}"
+        >verify e-mail</a
+      >
+      {% endif %}
+    </div>
+  </div>
+</div>
+{%endblock%}

@@ -1,0 +1,36 @@
+{% extends 'base.html'%} {% block links %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/annotateStyle.css') }}"
+/>
+{% endblock %} {% block js %} {% endblock %} {% block title %} Bone age {%
+endblock %} {% block content %}
+<div class="container">
+  <h2>Select the CVS stage</h2>
+  <form action="{{url_for('select_stage')}}" method="POST">
+    <input type="text" name="filename" value="{{filename}}" class="hidden" />
+    <input type="text" name="x_vals" value="{{x_vals}}" class="hidden" />
+    <input type="text" name="y_vals" value="{{y_vals}}" class="hidden" />
+    <input
+      type="text"
+      name="annotation_vals"
+      value="{{annotation_vals}}"
+      class="hidden"
+    />
+
+    <label class="submit-label" for="cvs1">CVS-ONE</label>
+    <input type="submit" name="stage" id="cvs1" value="CVS-ONE" />
+    <label class="submit-label" for="cvs2">CVS-TWO</label>
+    <input type="submit" name="stage" id="cvs2" value="CVS-TWO" />
+    <label class="submit-label" for="cvs3">CVS-THREE</label>
+    <input type="submit" name="stage" id="cvs3" value="CVS-THREE" />
+    <label class="submit-label" for="cvs4">CVS-FOUR</label>
+    <input type="submit" name="stage" id="cvs4" value="CVS-FOUR" />
+    <label class="submit-label" for="cvs5">CVS-FIVE</label>
+    <input type="submit" name="stage" id="cvs5" value="CVS-FIVE" />
+    <label class="submit-label" for="cvs6">CVS-SIX</label>
+    <input type="submit" name="stage" id="cvs6" value="CVS-SIX" />
+  </form>
+</div>
+
+{%endblock%}

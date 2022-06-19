@@ -1,0 +1,38 @@
+.navbar-brand {
+  margin-left: 3rem;
+}
+
+.navbar-nav {
+  margin-right: 3.5rem;
+}
+
+.nav-item {
+  margin-left: 0.5rem;
+}
+
+.features__icon svg {
+  height: 1.6rem;
+  width: 1.2rem;
+  fill: rgb(202, 199, 199);
+}
+.nav__logo {
+  /* margin-top: 4rem; */
+  height: 3rem;
+  transition: all 0.3s;
+}
+.user-btn {
+  color: rgb(235, 230, 230);
+}
+
+.user-btn:hover,
+.user-btn:active {
+  color: rgb(235, 230, 230);
+  background-color: grey;
+}
+
+.dropdown-left-manual {
+  right: 0;
+  left: auto;
+  padding-left: 1px;
+  padding-right: 1px;
+}

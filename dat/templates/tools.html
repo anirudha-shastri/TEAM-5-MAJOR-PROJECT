@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block title %} Browse Tools {% endblock %} {% block
+links %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/toolStyle.css') }}"
+/>{% endblock %}{% block content %}
+<div class="container">
+  <div class="heading"><h2>Please select a tool to get started</h2></div>
+</div>
+<div class="container tool-row">
+  <div class="row">
+    <div class="col-6">
+      <div class="card" style="width: 18rem">
+        <div class="card-img-container bone-age-card">
+          <!-- <img
+            class="card-img-top card-img"
+            src="static/img/bone-age-card.jpg"
+            alt="Card image cap"
+          /> -->
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">Markers for Bone age prediction</h4>
+          <p class="card-text">Automatic marker generation</p>
+        </div>
+        <div class="card-body">
+          <a href="{{url_for('bone_age1_page')}}" class="card-btn"
+            >Go To Tool</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card" style="width: 18rem">
+        <div class="card-img-container annotation-card"></div>
+        <div class="card-body">
+          <h4 class="card-title">Annotation Tool</h4>
+          <p class="card-text">Make annotations to perform image analysis.</p>
+        </div>
+        <div class="card-body">
+          <a href="{{url_for('ann_tool_page')}}" class="card-btn">Go To Tool</a>
+        </div>
+      </div>
+
+      <!-- <form class="form form--close"></form> -->
+    </div>
+    <div class="col-sm"></div>
+  </div>
+</div>
+
+{%endblock%}

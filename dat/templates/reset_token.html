@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block links %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/registerStyle.css') }}"
+/>
+{% endblock %} {% block title %} Login {% endblock %} {% block content %}
+<div class="row-login">
+  <form method="POST" class="form-signin" autocomplete="off">
+    {{ form.hidden_tag() }}
+
+    <h1 class="h2 mb-3 font-weight-normal">Enter new password.</h1>
+    <br />
+
+    {{ form.password(class="form-control login-input",placeholder = "Password")
+    }} {{ form.confirm_password(class="form-control login-input",placeholder =
+    "Confirm Password") }}
+
+    <br />
+    <div class="row">
+      <div class="col-3">{{ form.submit(class="btn btn-lg btn-primary") }}</div>
+
+      <div class="row">
+        <!-- <div style="margin-top: 2rem" class="col-6">
+          <a href="#">Forgot Password?</a>
+        </div> -->
+      </div>
+    </div>
+  </form>
+</div>
+{%endblock%}

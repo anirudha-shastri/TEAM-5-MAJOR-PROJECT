@@ -1,0 +1,26 @@
+console.log("loaded");
+
+const hideContent = document.getElementById("no-image");
+const showContent = document.getElementById("thumbnail");
+
+function showMyImage(fileInput) {
+  hideContent.setAttribute("style", "display:none;");
+  showContent.removeAttribute("style", "display:none");
+  var files = fileInput.files;
+  for (var i = 0; i < files.length; i++) {
+    var file = files[i];
+    var imageType = /image.*/;
+    if (!file.type.match(imageType)) {
+      continue;
+    }
+    var img = document.getElementById("thumbnail");
+    img.file = file;
+    var reader = new FileReader();
+    reader.onload = (function (aImg) {
+      return function (e) {
+        aImg.src = e.target.result;
+      };
+    })(img);
+    reader.readAsDataURL(file);
+  }
+}

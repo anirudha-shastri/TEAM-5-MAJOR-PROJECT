@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/homeStyle.css') }}"
+    />
+
+    <script defer src="static/js/script.js"></script>
+
+    <title>Home Page</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <!-- <a href="{{ url_for('home_page')  }}"
+          ><img
+            src="static/img/DAT.jpg"
+            alt="DAT logo"
+            class="nav__logo"
+            id="logo"
+        /></a> -->
+
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link" id="features" href="#section--1">Features</a>
+          </li>
+        </ul>
+
+        <ul class="login__links">
+          <li class="nav__item">
+            <a class="nav__link" id="tool_link" href="{{url_for('tools_page')}}"
+              >Browse Tools</a
+            >
+          </li>
+          {% if current_user.is_authenticated %}
+          <li class="nav__item">
+            <a
+              class="login__link nav__link--btn btn--show-modal"
+              href="{{url_for('logout_page')}}"
+              >Logout</a
+            >
+          </li>
+          {% else %}
+          <li class="nav__item">
+            <a
+              class="login__link nav__link--btn btn--show-modal"
+              href="{{url_for('login_page')}}"
+              >Login</a
+            >
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+
+      <!-- <section class="hero"> -->
+      <div class="hero-text-box">
+        <h1>Dental Assistance Tool.</h1>
+        <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
+      </div>
+    </header>
+    <!-- </section> -->
+
+    <section class="section" id="section--1">
+      <div class="section__title">
+        <h2 class="section__description">Features</h2>
+        <!-- <h3 class="section__header">A tool for all your needs and more.</h3> -->
+      </div>
+
+      <div class="flex-container">  
+        <div class="spinner"><p>  
+          <div class="cube1"></div>  
+          <div class="cube2"></div>  
+          Loading...  
+          </p>  
+        </div>  
+        <div class="flex-slide home">  
+          <div class="flex-title flex-title-home">Annotation Tool</div>  
+          <div class="flex-about flex-about-home"><p>Click here to navigate to the home section of the website</p></div>  
+        </div>  
+        <div class="flex-slide about">  
+          <div class="flex-title flex-title-2">Markers for Bone age prediciton</div>  
+          <div class="flex-about"><p>Click here to navigate to the About section of the website</p></div>  
+        </div>  
+        <div class="flex-slide work">  
+          <div class="flex-title flex-title-3">Bone loss detection</div>  
+          <div class="flex-about"><p>Listing relevant snippets of work:</p>  
+            <ul>  
+              <li>First piece of work</li>  
+              <li>Second piece of work</li>  
+              <li>Third piece of work</li>  
+            </ul>  
+          </div>  
+        </div>  
+        <div class="flex-slide contact">  
+          <div class="flex-title flex-title-4">Caries Detection</div>  
+              <div class="flex-about">  
+                <p>Detection of caries in IOPA images</p>  
+                <!-- <form class="contact-form">  
+                  <p>Email <input type="text" name="email"></p>  
+                  <p>Comment <textarea type="text" name="comment" row="5"></textarea></p>  
+                  <p><input type="submit" name="email" value="Send Message"></p>  
+                </form>   -->
+          </div>  
+        </div>  
+      </div>  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>  
+      <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/769286/jquery.waitforimages.min.js"></script>  
+     </body>
+
+      <!-- <div class="features">
+        <img
+          src="static/img/img1.png"
+          data-src="static/img/img1.png"
+          alt="cephalogram"
+          class="features__img lazy-img"
+        />
+        <div class="features__feature">
+          <div class="features__icon">
+            <svg>
+              <use xlink:href="static/img/icons.svg#icon-monitor"></use>
+            </svg>
+          </div>
+          <h5 class="features__header">Image Annotation</h5>
+          <p>
+            Analysis of images has never been easier. Annotate your images and
+            perform complex analysis all in the click of a button.
+          </p>
+        </div>
+
+       
+      </div> -->
+    </section>
+  </body>
+</html>

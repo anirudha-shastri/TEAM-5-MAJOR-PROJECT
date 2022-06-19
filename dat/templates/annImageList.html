@@ -1,0 +1,64 @@
+{% extends 'base.html' %} {% block title %} Browse Tools {% endblock %} {% block
+links %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/boneAgeStyle.css') }}"
+/>{% endblock %}{% block content %}
+
+<!------------------single image display---------------->
+<!-- <div class="container">
+  <div class="img-container">
+    <img src="data:image/jpg;charset=utf-8;base64,{{img}}" alt="image" />
+  </div>
+</div> -->
+<div class="container">
+  
+    <h2>Annotated Images</h2>
+    <table
+      class="table table-hover table-light"
+      style="margin-top: 3rem;margin-right:2rem"
+      id="event_table"
+    >
+      <thead class="theader">
+        <tr>
+          <th>ID</th>
+          <th>Filename</th>
+          <th>Date/Time</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody style="color: #444;font-weight:400">
+        {% for image in images %} 
+        <tr>
+          <td>{{ image.id }}</td>
+          <td>{{ image.name1 }}</td>
+          <td>{{ image.dt }} </td>
+          <td>
+            <!-- <button
+              class="btn btn-outline btn-info"
+              data-toggle="modal"
+              data-target="#"
+            >
+              Click to view
+            </button>
+            <button
+              class="btn btn-outline btn-success"
+              data-toggle="modal"
+              data-target="#"
+            >
+              Download
+            </button> -->
+            <form action = "{{url_for('view_ann_img')}}" method ="POST">
+              <input class ="hidden" type = "text" name = "img-id" value = "{{image.id}}" >
+              <button class="btn btn-outline btn-success" type = "submit" > View Image </button>
+            </form>
+            
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {%endblock%}
+  </div>
+</div>

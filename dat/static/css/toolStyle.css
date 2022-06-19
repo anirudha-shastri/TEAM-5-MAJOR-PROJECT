@@ -1,0 +1,85 @@
+.heading {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/*****Browse tool style****/
+
+.tool-row {
+  margin-top: 4.5rem;
+}
+
+.operation {
+  text-align: center;
+}
+
+/* .operation--close {
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+} */
+
+.tool-link:link,
+.tool-link:visited {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 2px solid #e67e22;
+  padding-bottom: 0.3rem;
+  -webkit-transition: border-bottom 0.2s, color 0.2s;
+  transition: border-bottom 0.2s, color 0.2s;
+}
+
+.tool-link:hover,
+.tool-link:active {
+  text-decoration: none;
+  color: rgb(131, 129, 129);
+  font-size: 35px;
+}
+
+h2 > a {
+  color: black;
+}
+
+/****cards****/
+
+.card {
+  box-shadow: 0.5px 0.5px 5px;
+  /* align-self: center; */
+  margin-left: 25%;
+}
+
+.card-img-container {
+  width: 100%;
+
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.bone-age-card {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.384), rgba(0, 0, 0, 0.384)),
+    url(/static/img/bone-age-card.jpg);
+}
+
+.annotation-card {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.384), rgba(0, 0, 0, 0.384)),
+    url(/static/img/annotation-card.png);
+}
+
+/* .card-img {
+  height: 100px;
+} */
+
+.card-btn:link,
+.card-btn:visited {
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: #ec8225;
+  color: white;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+}
+
+.card-btn:hover,
+.card-btn:active {
+  text-decoration: none;
+  background-color: #e28533;
+}
